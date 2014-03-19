@@ -24,4 +24,8 @@ class User < ActiveRecord::Base
   def full_name
     "#{self.firstname} #{self.lastname}"
   end
+
+  def associated_tags
+    talks.map { |t| t.tag_list } .flatten.uniq
+  end
 end
