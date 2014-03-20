@@ -4,6 +4,7 @@
   <h4>
     <%= t '.speakers' %> : <%= next_event.talks
                             .map { |t| link_to "#{t.speaker.firstname} #{t.speaker.lastname}", t.speaker }
+                            .uniq
                             .join(', ')
                             .html_safe %>
   </h4>

@@ -34,7 +34,7 @@ class EventsController < ApplicationController
   private
 
     def set_event
-      @event = Event.find(params[:id])
+      @event = Event.includes([{ talks: [:speaker] }]).find(params[:id])
       raise ActionController::RoutingError.new('Not Found') if @event.nil?
     end
 end

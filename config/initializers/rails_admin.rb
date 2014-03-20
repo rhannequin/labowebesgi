@@ -159,4 +159,22 @@ RailsAdmin.config do |config|
   #     # using `field` instead of `configure` will exclude all other fields and force the ordering
   # end
 
+  config.model Talk do
+    list do
+      field :title
+      field :tag_list
+      field :description
+      field :event
+      field :speaker
+    end
+
+    edit do
+      field :title
+      field :tag_list
+      field :description
+      field :event
+      field :speaker
+    end
+  end
+
 end

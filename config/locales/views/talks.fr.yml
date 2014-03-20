@@ -5,5 +5,7 @@ fr:
       table_title: "Titre"
       table_description: "Description"
       table_speaker: "Présenté par"
+      table_event: "Événement"
+      table_tags: "Tags"
       table_starts_at: "Date"
       no_talks: "Il n'y a pas de présentation à afficher."
