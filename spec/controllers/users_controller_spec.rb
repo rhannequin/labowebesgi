@@ -6,14 +6,23 @@ describe UsersController do
 
   describe "GET 'show'" do
 
-    it "should be successful" do
-      get :show, id: @user.id
-      response.should be_success
-    end
-
-    it "should find the right user" do
+    it "finds the right user" do
       get :show, id: @user.id
       assigns(:user).should == @user
+    end
+
+    describe "use friendly_id for user slugs" do
+
+      it "responds to its generated slug" do
+        get :show, id: @user.slug
+        response.should be_success
+      end
+
+      it "redirect when using user's id" do
+        get :show, id: @user.id
+        response.should redirect_to(user_path(@user))
+      end
+
     end
 
     # it "should display the list of talks" do
